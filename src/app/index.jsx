@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
-import Header from './header';
-import Paragraph from './paragraph';
-import Content from './content';
+import Header from './header/header';
+import Paragraph from './paragraph/paragraph';
+import Content from './content/content';
 
 import './app.css';
 
@@ -16,14 +16,14 @@ export default class App extends Component {
 
   onItemAdded = (text) => {
     const newItem = {
-      label:text,
-       id:this.maxId++
-  };
+      label: text,
+      id:this.maxId++
+    };
 
-  this.setState(({ todoData }) => {
-    const newArr = [...todoData, newItem];
-    return {
-      todoData:newArr
+   this.setState(({ todoData }) => {
+    const newArr = [...todoData,newItem];
+     return {
+      todoData: newArr
     };
   });
   }

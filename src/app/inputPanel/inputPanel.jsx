@@ -4,7 +4,7 @@ import './inputPanel.css';
 
 export default class InputPanel extends Component  {
   state = {
-    label:''
+    label: ''
   }
 
   onLabelChange = (e) => {
@@ -14,10 +14,10 @@ export default class InputPanel extends Component  {
   };
 
   onSubmit = (e) => {
-    this.props.onItemAdded(this.state.label)
     e.preventDefault()
+    this.props.onItemAdded(this.state.label)
     this.setState({
-      label: '',
+      label: ''
     })
   };
 
@@ -25,11 +25,11 @@ export default class InputPanel extends Component  {
     return(
       <form onSubmit={this.onSubmit}>
         <input
-        value={this.state.label}
-        className='inputPanel'
-        placeholder='text'
-        type="text"
-        onChange={this.onLabelChange}
+          value={this.state.label}
+          className='inputPanel'
+          placeholder='text'
+          type="text"
+          onChange={this.onLabelChange}
         />
       </form>
     );

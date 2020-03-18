@@ -1,7 +1,7 @@
 import React  from 'react';
 
-import ItemText from './../itemText';
-import InputPanel from './../inputPanel';
+import ItemText from './../itemText/itemText';
+import InputPanel from './../inputPanel/inputPanel';
 
 import './content.css';
 
