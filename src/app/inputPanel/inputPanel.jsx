@@ -12,16 +12,25 @@ export default class InputPanel extends Component  {
       label: e.target.value
     })
   };
+
   onSubmit = (e) => {
     this.props.onItemAdded(this.state.label)
-    this.refs.someName.value = '';
     e.preventDefault()
-  }
+    this.setState({
+      label: '',
+    })
+  };
+
   render() {
     return(
       <form onSubmit={this.onSubmit}>
-        <input className='inputPanel' placeholder='text' type="text"
-        onChange={this.onLabelChange} ref='someName'/>
+        <input
+        value={this.state.label}
+        className='inputPanel'
+        placeholder='text'
+        type="text"
+        onChange={this.onLabelChange}
+        />
       </form>
     );
   }
